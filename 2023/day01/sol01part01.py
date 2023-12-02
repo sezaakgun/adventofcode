@@ -3,7 +3,7 @@ import re
 
 def read_input():
     with open(os.path.dirname(__file__) + "/input.txt") as f:
-        lines = f.readlines()
+        lines = f.read().splitlines()
     return lines
 
 def sol01part01():
