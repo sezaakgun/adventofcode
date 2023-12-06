@@ -1,2 +1,9 @@
 /venv
 __pycache__
+out
+target
+.metals
+.vscode
+.scalafmt.conf
+project
+.bsp

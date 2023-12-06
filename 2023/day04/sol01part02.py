@@ -21,7 +21,7 @@ def sol01part02():
         card_info, body = line.split(': ')
         card_id = int(card_info.split(' ')[-1])
         score = get_score(body)
-        current_multiplier = max(multiplier[card_id], 1)
+        current_multiplier = multiplier[card_id]
         count += current_multiplier
 
         for i in range(score):
