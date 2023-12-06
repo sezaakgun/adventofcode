@@ -8,13 +8,11 @@ def read_input():
         lines = f.read().splitlines()
     return lines
 
-
+# TODO: This works really unefficiently. We need to find a way to make it faster.
 def sol01part02():
     lines = read_input()
 
     seeds = list(map(int, lines[0].split(" ")[1:]))
-    min_location = float('inf')
-    min_locations = []
 
     outer_maps = []
     inner_maps = []
@@ -34,7 +32,6 @@ def sol01part02():
 
     args = [(seeds[i], seeds[i+1], outer_maps, i) for i in range(0, len(seeds), 2)]
 
-    # Create a Pool object and use it to apply the function to the arguments
     with multiprocessing.Pool() as pool:
         results = pool.map(process_seed_range, args)
 
